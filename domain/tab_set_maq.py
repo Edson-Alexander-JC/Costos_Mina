@@ -27,8 +27,10 @@ class TabSetMaq(Tab):
         st.divider()
         self.set_atributos()
         st.divider()
-        if st.button("Guardar maquinaria"):
-            self.guardar_data()
+        col1 = st.columns(1)
+        with col1:
+            if st.button("Guardar maquinaria"):
+                self.guardar_data()
 
     def guardar_maquinaria(marca: str, modelo: str, datos: dict):
         ruta = "data/maquinaria.json"
