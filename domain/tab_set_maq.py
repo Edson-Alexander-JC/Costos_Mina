@@ -25,7 +25,7 @@ class TabSetMaq(Tab):
     def render(self):
         self.set_inputs()
     
-    def set_inputs():
+    def set_inputs(self):
         for x in maq_atributes_list:
             st.number_input(x, key=maq_atributes_list[x])
 
