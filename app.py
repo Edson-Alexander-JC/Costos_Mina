@@ -32,7 +32,7 @@ tab_mo = TabManoObra()
 st.title("Costos Mineros")
 
 tab1, tab2, tab3, tab4 = st.tabs([
-    "Set Maquinaria Data"
+    "Set Maquinaria Data",
     "Costos Operación",
     "Mantenimiento",
     "Mano de Obra"
