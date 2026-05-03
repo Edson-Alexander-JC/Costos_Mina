@@ -5,7 +5,7 @@ from domain.tab_mantenimiento import TabMantenimiento
 data = {
     0: ("Entradas", ["valor1", "valor2"]),
     1: ("Resultados", {"res1": 0, "res2": 0}),
-    3: ("Resumen", {"total": 0})
+    2: ("Resumen", {"total": 0})
 }
 tab_m = TabMantenimiento(data)
 st.title("Costos Mineros")
