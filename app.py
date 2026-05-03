@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
-from domain import tab_maquinaria, tab_obrero
 from domain.tab_mantenimiento import TabMantenimiento
+
 data = {
     0: ("Entradas", ["valor1", "valor2"]),
     1: ("Resultados", {"res1": 0, "res2": 0}),
