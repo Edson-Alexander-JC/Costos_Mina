@@ -43,11 +43,11 @@ with tab1:
     tab_set_maq = TabSetMaq()
     tab_set_maq.render()
 # ---------------- TAB 2 ----------------
-with tab2:
-    tab_man.render()
+with tab2:pass
+    #tab_man.render()
 # ---------------- TAB 3 ----------------
-with tab3:
-    tab_man.render()
+with tab3:pass
+    #tab_man.render()
 # ---------------- TAB 4 ----------------
-with tab4:
-    tab_man.render()
+with tab4:pass
+    #tab_man.render()
