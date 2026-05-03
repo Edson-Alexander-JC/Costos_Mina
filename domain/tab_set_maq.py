@@ -1,7 +1,7 @@
 import json
 import os
 import streamlit as st
-from interfaces import tab as Tab
+from interfaces.tab import Tab
 
 st.subheader("Mantenimiento")
 maq_atributes_list:dict = {

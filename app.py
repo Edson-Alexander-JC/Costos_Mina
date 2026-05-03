@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 #TABS
 from domain.tab_mantenimiento import TabMantenimiento
-from domain.tab_obrero import TabManoObra
+from domain.tab_mano_obra import TabManoObra
 from domain.tab_maquinaria import TabMaquinaria
 from domain.tab_set_maq import TabSetMaq
 #DOMAINS

@@ -1,5 +1,5 @@
 import streamlit as st
-from interfaces import tab as Tab
+from interfaces.tab import Tab
 
 class TabMaquinaria(Tab):
 
