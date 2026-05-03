@@ -28,8 +28,8 @@ class TabSetMaq(Tab):
         self.set_inputs()
     
     def set_inputs(self):
-        for x in maq_list:
-            st.number_input(x, key=maq_list[x])
+        for e in maq_list:
+            self.set_input(e[0],e[1],e[2])
 
     def guardar_maquinaria(marca: str, modelo: str, datos: dict):
         ruta = "data/maquinaria.json"
