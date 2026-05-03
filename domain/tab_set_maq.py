@@ -4,19 +4,21 @@ import streamlit as st
 from interfaces.tab import Tab
 
 st.subheader("Mantenimiento")
-maq_atributes_list:dict = {
-    "valor adquisicion":"valor_adquisicion",
-    "vida economica_util":"vida_economica_util",
-    "valor residual":"valor_residual",
-    "consumo de combustible":"combustible_percent",
-    "consumo de lubricante":"lubricante_percent",
-    "potencia (KW)":"potencia_KW",
-    "capacidad":"capacidad",
-    "interes":"interes",
-    "disponibilidad mecanica":"disponibilidad_mec",
-    "seguro":"seguro",
-    "horas operativas anuales":"horas_operativas_anual",
-}
+maq_list:dic = [
+    ["string","Marca","marca"],
+    ["string","Modelo","modelo"],
+    ["float","Valor adquisicion","valor_adquisicion"],
+    ["number","Vida economica util","vida_economica_util"],
+    ["float","Valor residual","valor_residual"],
+    ["float","Consumo de combustible","combustible_percent"],
+    ["float","Consumo de lubricante","lubricante_percent"],
+    ["float","Potencia (KW)","potencia_KW"],
+    ["float","Capacidad","capacidad"],
+    ["float","Interes","interes"],
+    ["float","Disponibilidad mecanica","disponibilidad_mec"],
+    ["float","Seguro","seguro"],
+    ["number","Horas operativas anuales","horas_operativas_anual"],
+]
 
 class TabSetMaq(Tab):
 
@@ -26,8 +28,8 @@ class TabSetMaq(Tab):
         self.set_inputs()
     
     def set_inputs(self):
-        for x in maq_atributes_list:
-            st.number_input(x, key=maq_atributes_list[x])
+        for x in maq_list:
+            st.number_input(x, key=maq_list[x])
 
     def guardar_maquinaria(marca: str, modelo: str, datos: dict):
         ruta = "data/maquinaria.json"
