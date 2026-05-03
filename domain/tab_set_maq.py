@@ -26,11 +26,7 @@ class TabSetMaq(Tab):
         self.set_Marca_Modelo()
         st.divider()
         self.set_atributos()
-        st.divider()
-        col1 = st.columns(1)
-        with col1:
-            if st.button("Guardar maquinaria"):
-                self.guardar_data()
+        
 
     def guardar_maquinaria(marca: str, modelo: str, datos: dict):
         ruta = "data/maquinaria.json"
@@ -84,5 +80,9 @@ class TabSetMaq(Tab):
                     valor = self.set_input(tipo, label, f"setmaq_{key}")
 
             self.datos[key] = valor
+        st.divider()
+        with col2:
+            if st.button("Guardar maquinaria"):
+                self.guardar_data()
         
     def guardar_data(self):pass
