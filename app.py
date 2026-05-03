@@ -1,7 +1,8 @@
 import streamlit as st
 import pandas as pd
+from domain import tab_maquinaria, tab_mantenimiento, tab_obrero
 
-st.title("Sistema de Costos Mineros")
+st.title("Costos Mineros")
 
 tab1, tab2, tab3 = st.tabs([
     "Costos Operación",
@@ -11,7 +12,7 @@ tab1, tab2, tab3 = st.tabs([
 
 # ---------------- TAB 1 ----------------
 with tab1:
-    st.subheader("Costos de Operación")
+    st.subheader("Maquinaria")
 
     horas = st.number_input("Horas")
     costo = st.number_input("Costo por hora")
