@@ -1,14 +1,11 @@
 class MantenimientoDomain:
     def __init__(self,
-        data:DataMaquinaria,
-        tarifa_mantenimiento:float,
-        mano_obra_percent:float,
-        repuestos_percent:float,
+        maq:DataMaquinaria,mant:DataTime,
     ):
-        self.MY_MAQUINA = data
-        self.tarifa_mantenimiento:float = tarifa_mantenimiento
-        self.mano_obra_percent:float = mano_obra_percent
-        self.repuestos_percent:float = repuestos_percent
+        self.MY_MAQUINA = maq
+        self.tarifa_mantenimiento:float = mant.tarifa_mantenimiento
+        self.mano_obra_percent:float = mant.mano_obra_percent
+        self.repuestos_percent:float = mant.repuestos_percent
 
     def calc_tarifa_mantenimiento(self): 
         return (

@@ -1,16 +1,37 @@
 import streamlit as st
 import pandas as pd
+#TABS
 from domain.tab_mantenimiento import TabMantenimiento
+from domain.tab_obrero import TabManoObra
+from domain.tab_maquinaria import TabMaquinaria
+from domain.tab_set_maq import TabSetMaq
+#DOMAINS
+from domain.maquinaria_domain import MaquinariaDomain
+from domain.mantenimiento_maq import MantenimientoDomain
+from domain.mano_obra import ManoObraDomain
+#DATA_SETS
+from interfaces.data_maquinaria import DataMaquinaria
+from interfaces.data_mantenimiento import DataMantenimiento
+from interfaces.data_obrero import DataObrero
+
+tab_man = TabMantenimiento(data)
+tab_maq = TabMaquinaria(data)
+tab_mo = TabManoObra(data)
 
 data = {
-    0: ("Entradas", ["valor1", "valor2"]),
+    0: ("Maquinaria", [
+            "valor1", 
+            "valor2"
+        ]),
     1: ("Resultados", {"res1": 0, "res2": 0}),
     2: ("Resumen", {"total": 0})
 }
-tab_m = TabMantenimiento(data)
+
+
 st.title("Costos Mineros")
 
-tab1, tab2, tab3 = st.tabs([
+tab1, tab2, tab3, tab4 = st.tabs([
+    "Set Maquinaria Data"
     "Costos Operación",
     "Mantenimiento",
     "Mano de Obra"
@@ -18,25 +39,14 @@ tab1, tab2, tab3 = st.tabs([
 
 # ---------------- TAB 1 ----------------
 with tab1:
-    tab_m.render()
-
+    tab_set_maq = TabSetMaq()
+    tab_set_maq.render()
 # ---------------- TAB 2 ----------------
 with tab2:
-    st.subheader("Mantenimiento")
-
-    costo_op = st.number_input("Costo operación base")
-
-    if st.button("Calcular Mantenimiento"):
-        mantenimiento = costo_op * 0.15
-        st.write("Mantenimiento:", mantenimiento)
-
+    tab_man.render()
 # ---------------- TAB 3 ----------------
 with tab3:
-    st.subheader("Mano de Obra")
-
-    trabajadores = st.number_input("N° trabajadores")
-    salario = st.number_input("Salario")
-
-    if st.button("Calcular Mano de Obra"):
-        total = trabajadores * salario
-        st.write("Costo Mano de Obra:", total)
+    tab_man.render()
+# ---------------- TAB 4 ----------------
+with tab4:
+    tab_man.render()
