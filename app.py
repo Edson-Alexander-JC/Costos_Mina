@@ -15,8 +15,8 @@ from interfaces.data_mantenimiento import DataMantenimiento
 from interfaces.data_obrero import DataObrero
 
 tab_man = TabMantenimiento(data)
-tab_maq = TabMaquinaria(data)
-tab_mo = TabManoObra(data)
+tab_maq = TabMaquinaria()
+tab_mo = TabManoObra()
 
 data = {
     0: ("Maquinaria", [
