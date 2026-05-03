@@ -19,17 +19,16 @@ maq_list:list = [
 ]
 
 class TabSetMaq(Tab):
-    def __init__(self):pass
-    datos:dict= {}
+    def __init__(self):
+        datos:dict= {}
     def render(self):
         st.subheader("Set Maquinaria")
         self.set_Marca_Modelo()
         st.divider()
         self.set_atributos()
         st.divider()
-        col1 = st.columns(1)
-        with col1: st.button("Guardar maquinaria")
-        if(st.button("Guardar maquinaria")): self.guardar_data()
+        if st.button("Guardar maquinaria"):
+            self.guardar_data()
 
     def guardar_maquinaria(marca: str, modelo: str, datos: dict):
         ruta = "data/maquinaria.json"
