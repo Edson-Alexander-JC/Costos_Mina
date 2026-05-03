@@ -26,6 +26,7 @@ class TabSetMaq(Tab):
         st.subheader("Set Maquinaria")
         datos = {}
         self.set_Marca_Modelo()
+        self.set_atributos()
         
 
         if st.button("Guardar maquinaria"):
@@ -68,7 +69,6 @@ class TabSetMaq(Tab):
             self.set_input("string","Marca","marca")
         with col2:
             self.set_input("string","Modelo","modelo")
-        st.divider() 
     def set_atributos(self):
         col1, col2, col3 = st.columns(3)
 
