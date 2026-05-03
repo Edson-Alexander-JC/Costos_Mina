@@ -26,11 +26,17 @@ class TabSetMaq(Tab):
 
     def render(self):
         st.subheader("Set Maquinaria")
-
+        col1, col2 = st.columns(2)
         datos = {}
+        for i, (tipo, label, key) in enumerate(maq_list):
 
-        for tipo, label, key in maq_list:
-            valor = self.set_input(tipo, label, key)
+            if i % 2 == 0:
+                with col1:
+                    valor = self.set_input(tipo, label, f"setmaq_{key}")
+            else:
+                with col2:
+                    valor = self.set_input(tipo, label, f"setmaq_{key}")
+
             datos[key] = valor
 
         if st.button("Guardar maquinaria"):
