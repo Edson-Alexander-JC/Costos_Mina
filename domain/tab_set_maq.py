@@ -3,10 +3,8 @@ import os
 import streamlit as st
 from interfaces.tab import Tab
 
-st.subheader("Mantenimiento")
+
 maq_list:list = [
-    ["string","Marca","marca"],
-    ["string","Modelo","modelo"],
     ["float","Valor adquisicion","valor_adquisicion"],
     ["number","Vida economica util","vida_economica_util"],
     ["float","Valor residual","valor_residual"],
@@ -26,18 +24,9 @@ class TabSetMaq(Tab):
 
     def render(self):
         st.subheader("Set Maquinaria")
-        col1, col2 = st.columns(2)
         datos = {}
-        for i, (tipo, label, key) in enumerate(maq_list):
-
-            if i % 2 == 0:
-                with col1:
-                    valor = self.set_input(tipo, label, f"setmaq_{key}")
-            else:
-                with col2:
-                    valor = self.set_input(tipo, label, f"setmaq_{key}")
-
-            datos[key] = valor
+        self.set_Marca_Modelo()
+        
 
         if st.button("Guardar maquinaria"):
             marca = datos["marca"]
@@ -72,3 +61,29 @@ class TabSetMaq(Tab):
         # 6. Guardar archivo
         with open(ruta, "w") as f:
             json.dump(contenido, f, indent=4)
+
+    def set_Marca_Modelo(self):
+        col1, col2 = st.columns(2)
+        with col1:
+            self.set_input("string","Marca","marca")
+        with col2:
+            self.set_input("string","Modelo","modelo")
+        st.divider() 
+    def set_atributos(self):
+        col1, col2, col3 = st.columns(3)
+
+        for i, (tipo, label, key) in enumerate(maq_list):
+
+            if i % 3 == 0:
+                with col1:
+                    valor = self.set_input(tipo, label, f"setmaq_{key}")
+
+            elif i % 3 == 1:
+                with col2:
+                    valor = self.set_input(tipo, label, f"setmaq_{key}")
+
+            else:
+                with col3:
+                    valor = self.set_input(tipo, label, f"setmaq_{key}")
+
+            datos[key] = valor

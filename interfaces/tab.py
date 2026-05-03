@@ -10,7 +10,7 @@ class Tab(ABC):
                 return st.text_input(label, key=key)
 
             case "number":
-                return st.number_input(label, key=key)
+                return st.number_input(label, min_value=0, step=1, key=key)
 
             case "float":
                 return st.number_input(label, key=key, format="%.2f")
