@@ -4,7 +4,7 @@ import streamlit as st
 from interfaces.tab import Tab
 
 st.subheader("Mantenimiento")
-maq_list:dic = [
+maq_list:list = [
     ["string","Marca","marca"],
     ["string","Modelo","modelo"],
     ["float","Valor adquisicion","valor_adquisicion"],
