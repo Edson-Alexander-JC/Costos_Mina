@@ -22,4 +22,4 @@ class Tab(ABC):
                 return self.input_list(label, key)
 
             case _:
-                st.warning(f"Tipo no soportado: " + tipo)
+                st.warning("Tipo no soportado: " + tipo)
