@@ -4,8 +4,8 @@ class Tab(ABC):
     @abstractmethod
     def render(self):pass
 
-    def set_input(self,type:str,label:str,key:str, options=None):
-        match type:
+    def set_input(self,tipo:str,label:str,key:str, options=None):
+        match tipo:
             case "string":
                 return st.text_input(label, key=key)
 
@@ -22,4 +22,4 @@ class Tab(ABC):
                 return self.input_list(label, key)
 
             case _:
-                st.warning(f"Tipo no soportado: {type}")
+                st.warning(f"Tipo no soportado: {tipo}")
