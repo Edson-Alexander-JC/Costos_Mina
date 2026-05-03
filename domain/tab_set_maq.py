@@ -20,7 +20,7 @@ maq_list:list = [
 
 class TabSetMaq(Tab):
     def __init__(self):
-        datos:dict= {}
+        self.datos:dict = {}
     def render(self):
         st.subheader("Set Maquinaria")
         self.set_Marca_Modelo()
