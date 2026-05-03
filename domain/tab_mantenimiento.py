@@ -33,7 +33,7 @@ class TabMantenimiento(Tab):
             st.metric(x,label_value[x])
         
 
-    def set_col1(self,title:str,label_value:array):
+    def set_col1(self,title:str,label_value:dict):
         self.set_inputs(title,label_value)
     def set_col2(self,title:str,label_value:dict):
         self.set_mini_view(title,label_value)

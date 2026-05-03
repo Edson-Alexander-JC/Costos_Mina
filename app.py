@@ -1,7 +1,13 @@
 import streamlit as st
 import pandas as pd
-from domain import tab_maquinaria, tab_mantenimiento, tab_obrero
+from domain import tab_maquinaria, tab_mantenimiento as TabMantenimiento, tab_obrero
 
+data = {
+    0: ("Entradas", ["valor1", "valor2"]),
+    1: ("Resultados", {"res1": 0, "res2": 0}),
+    3: ("Resumen", {"total": 0})
+}
+tab_m = TabMantenimiento(data)
 st.title("Costos Mineros")
 
 tab1, tab2, tab3 = st.tabs([
@@ -12,14 +18,7 @@ tab1, tab2, tab3 = st.tabs([
 
 # ---------------- TAB 1 ----------------
 with tab1:
-    st.subheader("Maquinaria")
-
-    horas = st.number_input("Horas")
-    costo = st.number_input("Costo por hora")
-
-    if st.button("Calcular Operación"):
-        total = horas * costo
-        st.write("Costo Operación:", total)
+    tab_m.render()
 
 # ---------------- TAB 2 ----------------
 with tab2:

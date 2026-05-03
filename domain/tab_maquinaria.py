@@ -1,6 +1,8 @@
 import streamlit as st
-from interfaces.tab import Tab
+from interfaces import tab as Tab
 
-class MaquinariaTab:
-    def __init__(self,DataMaquinaria):
-        pass
+class TabMaquinaria(Tab):
+
+    def __init__(self):pass
+
+    def render(self):pass
