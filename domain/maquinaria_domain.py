@@ -1,3 +1,4 @@
+from interfaces.data_maquinaria import DataMaquinaria
 class MaquinariaDomain:
     #Responsabilidad; procesar los datos de DataMaquinaria
     def __init__(self,data:DataMaquinaria):

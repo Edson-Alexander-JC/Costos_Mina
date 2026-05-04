@@ -1,6 +1,8 @@
+from interfaces.data_maquinaria import DataMaquinaria
+from interfaces.data_mantenimiento import DataMantenimiento
 class MantenimientoDomain:
     def __init__(self,
-        maq:DataMaquinaria,mant:DataTime,
+        maq:DataMaquinaria,mant:DataMantenimiento,
     ):
         self.MY_MAQUINA = maq
         self.tarifa_mantenimiento:float = mant.tarifa_mantenimiento

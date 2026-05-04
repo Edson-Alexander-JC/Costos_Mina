@@ -1,0 +1,20 @@
+{
+    "Komatsu": {
+        "PC220LC-8": {
+            "kind_of_maq": "Retroexcavadora",
+            "valor_adquisicion": 110000.0,
+            "vida_economica_util": 8000,
+            "valor_residual": 80255.0,
+            "combustible_percent": 9000.0,
+            "lubricante_percent": 540.0,
+            "potencia_KW": 250.0,
+            "capacidad": 258.0,
+            "interes": 0.5,
+            "disponibilidad_mec": 0.8,
+            "seguro": 0.8,
+            "horas_operativas_anual": 8000,
+            "marca": "Komatsu",
+            "modelo": "PC220LC-8"
+        }
+    }
+}

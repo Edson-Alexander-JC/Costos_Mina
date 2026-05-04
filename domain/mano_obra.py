@@ -1,3 +1,4 @@
+from interfaces.data_obrero import DataObrero
 class ManoObraDomain:
     RMV: float = 1130.0
     VACACIONES: int = 30
