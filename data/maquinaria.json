@@ -13,8 +13,7 @@
             "disponibilidad_mec": 0.8,
             "seguro": 0.8,
             "horas_operativas_anual": 8000,
-            "marca": "Komatsu",
-            "modelo": "PC220LC-8"
+            "importado": true
         }
     }
 }

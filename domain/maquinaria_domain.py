@@ -3,6 +3,7 @@ class MaquinariaDomain:
     #Responsabilidad; procesar los datos de DataMaquinaria
     def __init__(self,data:DataMaquinaria):
         self.MY_MAQUINA = data
+        self.depreciacion:float = 0.0
 
         self.COSTOS_COMBUSTIBLE = 0.0
         self.COSTOS_LUBRICANTE = 0.0
@@ -10,7 +11,6 @@ class MaquinariaDomain:
         self.COSTOS_MANTENIMIENTO = 0.0
         self.COSTOS_MANO_OBRA = 0.0
         self.COSTOS_PIEZAS_DESGASTE = {}
-
 
     def calc_igv(self) -> float: 
         return self.MY_MAQUINA.valor_adquisicion * 0.18
@@ -24,11 +24,8 @@ class MaquinariaDomain:
     def calc_costos_insumos(self,porcentaje:float,precio:float):
             return porcentaje * precio    
 # costos de posecion
-    def calc_depreciacion(self):
-        return (
-            self.MY_MAQUINA.valor_adquisicion - 
-            self.MY_MAQUINA.valor_residual
-        ) / self.MY_MAQUINA.vida_economica_util
+    def set_depreciacion(self,depreciacion): self.depreciacion = depreciacion
+        
     def calc_interes(self):
         return (
             self.calc_inversion_media_anual() * 
@@ -47,12 +44,12 @@ class MaquinariaDomain:
 #
     def calc_costos_posecion(self):
         return (
-            self.calc_depreciacion()+
+            self.depreciacion+
             self.calc_interes()+
             self.calc_impuestos()+
             self.calc_seguro()
         ) / self.MY_MAQUINA.horas_operativas_anual
-# costos de posecion
+# costos de operacion
     def set_costos_combustible(self,precio:float):
         self.COSTOS_COMBUSTIBLE = (
             self.calc_costos_insumos(self.MY_MAQUINA.combustible_percent,precio)

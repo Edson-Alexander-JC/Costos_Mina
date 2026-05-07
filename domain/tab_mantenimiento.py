@@ -3,11 +3,10 @@ from interfaces.tab import Tab
 
 class TabMantenimiento(Tab):
 
-    def __init__(self, data: dict):
-        self.col1 = data[0]
-        self.col2 = data[1]
-        self.col3 = data[2]
-
+    def __init__(self):
+        self.my_maquinaria = None
+    def set_data(self,data): 
+        self.my_maquinaria = data
     def render(self):
         st.subheader("Mantenimiento")
 
